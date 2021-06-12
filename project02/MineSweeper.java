@@ -31,23 +31,34 @@ public class MineSweeper {
         };
         timer.schedule(task, 0, 1000);
 		
-		Icon icon = new ImageIcon("C:\\Users\\user\\Desktop\\Cs102\\images\\smiley.png");
+		Icon icon = new ImageIcon("C:\\Users\\user\\Desktop\\Cs102\\images\\adsýz.png");
 	    JFrame frame=new JFrame("Mine Sweeper | # of mines:"+ NUM_MINES);
 	    frame.setLayout(new BorderLayout());
 	    frame.setSize(1000,600);
 	    JPanel panel1=new JPanel();
 	  JPanel panel11=new JPanel();
-	 JLabel label1=new JLabel("sad");
+	 JLabel label1=new JLabel(String.valueOf(NUM_MINES));
+	 label1.setFont(new Font("Digital-7", Font.PLAIN,50));
 	  panel1.setLayout(new BorderLayout());
 	  JPanel panel12=new JPanel();
 	  JLabel label2= new JLabel(icon);
 	  panel11.setBackground(Color.GREEN);
 	  panel11.add(label1);
-	
+	  panel11.setBackground(Color.BLACK);
+	  label1.setForeground(Color.RED);
+	  JPanel panel13=new JPanel();
+	  panel13.add(label3);
 	  panel1.add(panel11,BorderLayout.WEST);
-	  panel1.add(label2);  
-	  label3.setFont(new Font("Digital-7 Mono", Font.PLAIN,40));
-	  panel1.add(label3,BorderLayout.EAST);
+	  panel12.add(label2);  
+
+	  
+	  label3.setFont(new Font("Digital-7 Mono", Font.PLAIN,50));
+	
+	  panel13.setBackground(Color.BLACK);
+	  label3.setForeground(Color.RED);
+	  panel13.setLayout(new FlowLayout(FlowLayout.CENTER));
+	  panel1.add(panel12);
+	  panel1.add(panel13,BorderLayout.EAST);
 	  panel1.setBackground(Color.GRAY);
 	    frame.add(panel1,BorderLayout.NORTH);
 	    JPanel panel2=new MineSweeperGUI(Sýze,Sýze,NUM_MINES);
