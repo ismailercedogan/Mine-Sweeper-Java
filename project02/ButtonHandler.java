@@ -2,7 +2,7 @@ package project02;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.*;
+
 public class ButtonHandler implements ActionListener{
 	private int row,col;
     private MineGrid grid;
