@@ -20,7 +20,7 @@ public class MineSweeperGUI extends JPanel {
 	     
 	          add(button);
 	          button.addActionListener(new ButtonHandler(i,j,grid));
-	         
+	         button.addMouseListener(new MyMouseAdapter(i,j,grid));
 	      }
 	  }
 

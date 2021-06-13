@@ -14,9 +14,10 @@ this.grid=g;
 }
 	
 	public void mouseClicked(MouseEvent e) {
+		if(SwingUtilities.isRightMouseButton(e)) {
 		if(e.getSource() instanceof JButton) {
   		  JButton button= (JButton) e.getSource();
-  		  button.setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\Cs102\\images\\flag.png"));
+  		  button.setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\Cs102\\images\\flagged.png"));
 	
 	   }
-}}
+}}}

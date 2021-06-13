@@ -32,7 +32,7 @@ public void actionPerformed(ActionEvent event){
           if(event.getSource() instanceof JButton){
               int info=grid.getCellContent(row,col);
         	  JButton button= (JButton) event.getSource();
-              button.setText(String.valueOf(grid.getCellContent(row,col)));
+             // button.setText(String.valueOf(grid.getCellContent(row,col)));
               if(info==1)
             	  button.setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\Cs102\\images\\one.png"));
               else if(info==2)
