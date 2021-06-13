@@ -18,8 +18,12 @@ public class MineSweeper {
     
             @Override
             public void run() {
-                if (seconds<10) {
+                if (seconds<100&&seconds>=10) {
             	label3.setText(String.valueOf("0"+seconds));
+                seconds++;
+                }
+                else if(seconds<10) {
+                	label3.setText(String.valueOf("00"+seconds));
                 seconds++;
                 }
                 else {
@@ -65,7 +69,7 @@ public class MineSweeper {
 	   
 	    frame.add(panel2,BorderLayout.CENTER);
 	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	
+	frame.setResizable(false);
 	
 	   
 	    frame.setVisible(true);
