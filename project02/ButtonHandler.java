@@ -20,7 +20,7 @@ public void actionPerformed(ActionEvent event){
     	  if(event.getSource() instanceof JButton) {
     		  JButton button= (JButton) event.getSource();
     		  button.setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\Cs102\\images\\greymine.png"));
-          
+        
     	  }
     		 JOptionPane.showMessageDialog(null,"OOOPS!!");
        
@@ -49,12 +49,36 @@ public void actionPerformed(ActionEvent event){
                     	  button.setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\Cs102\\images\\seven.png"));
                 	  else if(info==8)
                     	  button.setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\Cs102\\images\\eight.png"));
-                	  else if(info==0)
-                    	  button.setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\Cs102\\images\\blank.png"));
+                	  else if(info==0) {
+                    	  
+                		  
+                		  button.setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\Cs102\\images\\blank.png"));
                 	
-          }
+          }}
 
 
       }
+     
 }
+/*public void setNeighbourSide(int row,int col,MineGrid grid) {
+	int info=grid.getCellContent(row,col);
+	int i=row;
+	int j=col;
+	if(info==0) { 
+		
+	setNeighbourSide(i-1,j-1,grid);
+	setNeighbourSide(i-1,j,grid);
+	setNeighbourSide (i-1,j+1,grid);
+
+	setNeighbourSide (i,j-1,grid);
+	setNeighbourSide(i,j+1,grid);
+
+	setNeighbourSide (i+1,j-1,grid);
+	setNeighbourSide (i+1,j,grid);
+	setNeighbourSide (i+1,j+1,grid);
+		
+		
+	}
+		
+}*/
 }

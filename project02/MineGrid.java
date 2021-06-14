@@ -23,7 +23,7 @@ public void  initializeCells(){
 }
 
 private  void placeMines(int numMines){
-    Random random= new Random();
+ Random random= new Random();
     for(int i=0;i<numMines;i++){
      int r= random.nextInt(mineInformation.length);
     int c= random.nextInt(mineInformation[0].length);

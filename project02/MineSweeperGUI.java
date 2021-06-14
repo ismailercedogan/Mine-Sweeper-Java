@@ -5,11 +5,13 @@ public class MineSweeperGUI extends JPanel {
 	
 	private static final long serialVersionUID = 1L;
 	private  MineGrid grid;
-
+	private static boolean[][] isFlagged;
+	private static boolean[][] isClicked;
 	public  MineSweeperGUI(int numRows, int numCols,int numMines){
       
       
-     
+	  this.isFlagged=new boolean[numRows][numCols];
+	  this.isClicked=new boolean[numRows][numCols];
 	  grid=new MineGrid(numRows,numCols,numMines);
 	  setLayout(new GridLayout(numRows,numCols));
 	  Icon btnimage = new ImageIcon("C:\\Users\\user\\Desktop\\Cs102\\images\\covered2.png");
@@ -20,10 +22,26 @@ public class MineSweeperGUI extends JPanel {
 	     
 	          add(button);
 	          button.addActionListener(new ButtonHandler(i,j,grid));
-	         button.addMouseListener(new MyMouseAdapter(i,j,grid));
+	          MyMouseAdapter adapter=new MyMouseAdapter(i,j,grid);
+	          button.addMouseListener(adapter);
+	          
 	      }
 	  }
 
 	}
+	public static boolean[][] getIsFlagged() {
+		return isFlagged;
 	}
+	public static void setIsFlagged(boolean[][] isFlagged) {
+		MineSweeperGUI.isFlagged = isFlagged;
+	}
+	public static boolean[][] getIsClicked() {
+		return isClicked;
+	}
+	public static void setIsClicked(boolean[][] isClicked) {
+		MineSweeperGUI.isClicked = isClicked;
+	}
+
+}	
+
 
