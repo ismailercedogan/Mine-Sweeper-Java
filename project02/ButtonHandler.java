@@ -20,7 +20,7 @@ public void actionPerformed(ActionEvent event){
     	  if(event.getSource() instanceof JButton) {
     		  JButton button= (JButton) event.getSource();
     		  button.setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\Cs102\\images\\greymine.png"));
-        
+         MineSweeper.iconSetter(new ImageIcon("C:\\Users\\user\\Desktop\\Cs102\\images\\deadsmiley.png"));
     	  }
     		 JOptionPane.showMessageDialog(null,"OOOPS!!");
        
@@ -28,13 +28,16 @@ public void actionPerformed(ActionEvent event){
       }
 
       else {
-
+    
           if(event.getSource() instanceof JButton){
               int info=grid.getCellContent(row,col);
         	  JButton button= (JButton) event.getSource();
              // button.setText(String.valueOf(grid.getCellContent(row,col)));
-              if(info==1)
+        	  MineSweeperGUI.getIsClicked()[row][col]=true;
+        	  if(info==1) {
             	  button.setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\Cs102\\images\\one.png"));
+           
+        	  }
               else if(info==2)
             	  button.setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\Cs102\\images\\two.png"));
               else if(info==3)

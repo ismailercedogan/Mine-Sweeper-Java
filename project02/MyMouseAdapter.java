@@ -20,7 +20,7 @@ this.grid=g;
 		if(e.getSource() instanceof JButton) {
   		  JButton button= (JButton) e.getSource();
   		 if(!MineSweeperGUI.getIsFlagged()[row][col]&&!MineSweeperGUI.getIsClicked()[row][col]) {
-  		  Icon icon = button.getIcon();
+  		  
 		 button.setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\Cs102\\images\\flagged.png"));
 		 MineSweeperGUI.getIsFlagged()[row][col]=true;
 	   }

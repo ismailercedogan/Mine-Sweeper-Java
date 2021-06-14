@@ -10,8 +10,8 @@ public class MineSweeperGUI extends JPanel {
 	public  MineSweeperGUI(int numRows, int numCols,int numMines){
       
       
-	  this.isFlagged=new boolean[numRows][numCols];
-	  this.isClicked=new boolean[numRows][numCols];
+	  isFlagged=new boolean[numRows][numCols];
+	  isClicked=new boolean[numRows][numCols];
 	  grid=new MineGrid(numRows,numCols,numMines);
 	  setLayout(new GridLayout(numRows,numCols));
 	  Icon btnimage = new ImageIcon("C:\\Users\\user\\Desktop\\Cs102\\images\\covered2.png");

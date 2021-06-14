@@ -1,6 +1,5 @@
 package project02;
 import javax.swing.*;
-import javax.swing.border.LineBorder;
 
 import java.awt.*;
 import java.util.Timer;
@@ -10,7 +9,7 @@ public class MineSweeper {
 	
 		private static final int NUM_MINES=100;
 	    private static final int Sýze=20;
-	    
+	    private static JLabel label2=new JLabel();
 
 	public static void main(String[] args){
 		JLabel label3= new JLabel("s");
@@ -53,8 +52,9 @@ public class MineSweeper {
 	 label1.setFont(new Font("Digital-7", Font.PLAIN,50));
 	  panel1.setLayout(new BorderLayout());
 	  JPanel panel12=new JPanel();
-	  JLabel label2= new JLabel(icon);
-	  //panel11.setBackground(Color.GREEN);
+	  
+	 MineSweeper.iconSetter(icon);
+	
 	  panel11.add(label1);
 	  panel11.setBackground(Color.BLACK);
 	  label1.setForeground(Color.RED);
@@ -75,7 +75,7 @@ public class MineSweeper {
 	  panel1.setBackground(Color.GRAY);
 	    frame.add(panel1,BorderLayout.NORTH);
 	    JPanel panel2=sweepergui;
-	   
+	    
 	    frame.add(panel2,BorderLayout.CENTER);
 	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setResizable(false);
@@ -85,5 +85,7 @@ public class MineSweeper {
 
 	
 	}
-
+public static void iconSetter(Icon i) {
+	label2.setIcon(i);
+}
 }
