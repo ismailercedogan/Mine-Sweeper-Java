@@ -4,13 +4,22 @@ import java.util.Random;
 public class MineGrid {
 	private static final int Mýne=-1;
     private int[][] mineInformation;
-
+    private static int[][]map;
 public MineGrid(int numRows,int numCols,int numMines) {
 
     mineInformation = new int[numRows][numCols];
+    map=new int[numRows][numCols];
     initializeCells();
     placeMines(numMines);
     setMineInformation();
+}
+
+public static int[][] getMap() {
+	return map;
+}
+
+public static void setMap(int[][] map) {
+	MineGrid.map = map;
 }
 
 public void  initializeCells(){
@@ -62,15 +71,15 @@ private void setMineInformation(){
     }
 
 }
-private void incrementMineCountAt(int i,int j){
+public void incrementMineCountAt(int i,int j){
     if(isInsideGrid(i,j)&& !isMine(i,j)){
         mineInformation[i][j]++;
-
+       
     }
 
 }
-private boolean isInsideGrid(int i,int j){
-    return (i>=0 && i< mineInformation.length)&&(j>=0&& j< mineInformation[0].length);
+public boolean isInsideGrid(int i,int j){
+   return (i>=0 && i< mineInformation.length)&&(j>=0&& j< mineInformation[0].length);
 
 
 }
@@ -78,4 +87,6 @@ public int getCellContent(int i,int j){
 
     return  mineInformation[i][j];
 }
+
+
 }

@@ -14,12 +14,15 @@ public class MineSweeper {
 	public static void main(String[] args){
 		JLabel label3= new JLabel("s");
 		Timer timer = new Timer();
-        TimerTask task = new TimerTask() {
+		JLabel label1=new JLabel(String.valueOf(NUM_MINES-MyMouseAdapter.getCount()));
+		TimerTask task = new TimerTask() {
             int seconds = 0;
-    
+          
             @Override
             public void run() {
-                if (seconds<100&&seconds>=10) {
+            	label1.setText(String.valueOf(NUM_MINES-MyMouseAdapter.getCount()));
+            	
+            	if (seconds<100&&seconds>=10) {
             	label3.setText(String.valueOf("0"+seconds));
                 seconds++;
                 }
@@ -48,7 +51,7 @@ public class MineSweeper {
 	  JPanel panel11=new JPanel();
 	
 	 
-	  JLabel label1=new JLabel(String.valueOf(NUM_MINES));
+	 
 	 label1.setFont(new Font("Digital-7", Font.PLAIN,50));
 	  panel1.setLayout(new BorderLayout());
 	  JPanel panel12=new JPanel();
