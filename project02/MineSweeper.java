@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Timer;
 import java.util.TimerTask;
+
 public class MineSweeper {
 
 	
@@ -42,7 +43,7 @@ public class MineSweeper {
         };
         timer.schedule(task, 0, 1000);
 		
-		Icon icon = new ImageIcon("adsýz.png");
+		Icon icon = new ImageIcon("images\\adsýz.png");
 	    JFrame frame=new JFrame("Mine Sweeper | # of mines:"+ NUM_MINES);
 	   MineSweeperGUI sweepergui= new MineSweeperGUI(Sýze,Sýze,NUM_MINES);
 	    frame.setLayout(new BorderLayout());
