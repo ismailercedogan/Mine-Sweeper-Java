@@ -18,7 +18,7 @@ private static Btn[][]Board;
 	  isClicked=new boolean[numRows][numCols];
 	  grid=new MineGrid(numRows,numCols,numMines);
 	  setLayout(new GridLayout(numRows,numCols));
-	  Icon btnimage = new ImageIcon("images\\covered.png");
+	  Icon btnimage = new ImageIcon("src\\imgs\\covered.png");
 	  for (int i=0;i<numRows;i++){
 	      for (int j=0;j<numCols;j++){
 	    	

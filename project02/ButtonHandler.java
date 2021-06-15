@@ -28,14 +28,14 @@ public void actionPerformed(ActionEvent event){
     			  for(int j=0;j<btns[0].length;j++)
     		
     			  if(grid.isMine(i,j)){  
-    		btns[i][j].setIcon(new ImageIcon("images\\greymine.png"));  
+    		btns[i][j].setIcon(new ImageIcon("src\\imgs\\greymine.png"));  
     			
  }
  
     		
     		  }
-    		  MineSweeper.iconSetter(new ImageIcon("images\\deadsmiley.png"));
-    		  button.setIcon(new ImageIcon("images\\greymine.png"));
+    		  MineSweeper.iconSetter(new ImageIcon("src\\imgs\\deadsmiley.png"));
+    		  button.setIcon(new ImageIcon("src\\imgs\\greymine.png"));
     	  }
     		 
     	  JOptionPane.showMessageDialog(null,"OOOPS!!");
