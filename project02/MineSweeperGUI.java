@@ -9,12 +9,12 @@ public class MineSweeperGUI extends JPanel {
 	private  MineGrid grid;
 	private static boolean[][] isFlagged;
 	private static boolean[][] isClicked;
-private static JButton[][]Board;
+private static Btn[][]Board;
 	//private  ArrayList <JButton>buttons=new ArrayList<>();
 	public  MineSweeperGUI(int numRows, int numCols,int numMines){
 	
-      JButton[][] Board=new JButton[numRows][numCols];
-	  isFlagged=new boolean[numRows][numCols];
+      Btn[][] Board=new Btn[numRows][numCols];
+	  isFlagged=new boolean	[numRows][numCols];
 	  isClicked=new boolean[numRows][numCols];
 	  grid=new MineGrid(numRows,numCols,numMines);
 	  setLayout(new GridLayout(numRows,numCols));
@@ -22,13 +22,14 @@ private static JButton[][]Board;
 	  for (int i=0;i<numRows;i++){
 	      for (int j=0;j<numCols;j++){
 	    	
-	    	  JButton button= new JButton();
+	    	 Btn button=new Btn(i,j);
 	         button.setIcon(btnimage);
-	         Board[i][j]=button;
-	          add(Board[i][j]);
+	      
+	          add(button);
 	       
 	          button.addActionListener(new ButtonHandler(i,j,grid,Board));
-	          MyMouseAdapter adapter=new MyMouseAdapter(i,j,grid);
+	          Board[i][j]=button;
+	          MyMouseAdapter adapter=new MyMouseAdapter(i,j,grid,Board);
 	          button.addMouseListener(adapter);
 	          
 	      }
@@ -36,11 +37,11 @@ private static JButton[][]Board;
 
 	}
 
-	public static JButton[][] getBoard() {
+	public static Btn[][] getBoard() {
 		return Board;
 	}
 
-	public static void setBoard(JButton[][] board) {
+	public static void setBoard(Btn[][] board) {
 		Board = board;
 	}
 

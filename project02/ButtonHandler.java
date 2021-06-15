@@ -8,10 +8,10 @@ import java.awt.event.ActionListener;
 public class ButtonHandler implements ActionListener{
 	private int row,col;
     private MineGrid grid;
-    private JButton[][]btns;
+    private Btn[][]btns;
     
 
-  public ButtonHandler(int x,int y,MineGrid g,JButton[][]btn){
+  public ButtonHandler(int x,int y,MineGrid g,Btn[][]btn){
       row=x;
       col=y;
       grid=g;
@@ -22,8 +22,8 @@ public class ButtonHandler implements ActionListener{
 public void actionPerformed(ActionEvent event){
 
       if(grid.isMine(row,col)){
-    	  if(event.getSource() instanceof JButton) {
-    		  JButton button= (JButton) event.getSource();
+    	  if(event.getSource() instanceof Btn) {
+    		  Btn button= (Btn) event.getSource();
     		  for(int i=0;i<btns.length;i++) {
     			  for(int j=0;j<btns[0].length;j++)
     		
@@ -43,15 +43,15 @@ public void actionPerformed(ActionEvent event){
     		 //System.exit(0);
       }
 
-      else {
+     /* else {
     
-          if(event.getSource() instanceof JButton){
+          if(event.getSource() instanceof Btn){
              // int info=grid.getCellContent(row,col);
-        	  JButton button= (JButton) event.getSource();
+        	  Btn button= (Btn) event.getSource();
              // button.setText(String.valueOf(grid.getCellContent(row,col)));
         	  MineSweeperGUI.getIsClicked()[row][col]=true;
         	  if(grid.isInsideGrid(row, col)) {
-        		check(this.row,this.col);  
+        		check(button.getRow(),button.getCol());  
         		  
         	  }
         	 
@@ -81,10 +81,10 @@ public void actionPerformed(ActionEvent event){
                 		  button.setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\Cs102\\images\\blank.png"));
                 		 check(row,col);
                 		 }
-*/        	  }
+*/        	  
+       //   }
 
-
-      }
+    //  }
      
 }
 /*public void setNeighbourSide(int row,int col,MineGrid grid,JButton btn) {
@@ -121,41 +121,38 @@ else if(grid.getCellContent(r, c)!=0||grid.getCellContent(r, c)!=-1){
 	
 	if(grid.getCellContent(r, c)==1) {
 		btns[r][c].setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\Cs102\\images\\one.png"));
-		MineSweeperGUI.getIsClicked()[r][c]=true;
+		//MineSweeperGUI.getIsClicked()[r][c]=true;
 	}
 	else if(grid.getCellContent(r, c)==2) {
 		btns[r][c].setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\Cs102\\images\\two.png"));
-		MineSweeperGUI.getIsClicked()[r][c]=true;
 	}
 	else if(grid.getCellContent(r, c)==3) {
 		btns[r][c].setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\Cs102\\images\\three.png"));
-		MineSweeperGUI.getIsClicked()[r][c]=true;
 	}
 	else if(grid.getCellContent(r, c)==4) {
 		btns[r][c].setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\Cs102\\images\\four.png"));
-		MineSweeperGUI.getIsClicked()[r][c]=true;
 	}
 	else if(grid.getCellContent(r, c)==5) {
 		btns[r][c].setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\Cs102\\images\\five.png"));
-		MineSweeperGUI.getIsClicked()[r][c]=true;
+		
 	}
 	else if(grid.getCellContent(r, c)==6) {
 		btns[r][c].setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\Cs102\\images\\six.png"));
-		MineSweeperGUI.getIsClicked()[r][c]=true;
+	
 	}
 	else if(grid.getCellContent(r, c)==7) {
 		btns[r][c].setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\Cs102\\images\\seven.png"));
-		MineSweeperGUI.getIsClicked()[r][c]=true;
+		
 	}
 	else if(grid.getCellContent(r, c)==8) {
 		btns[r][c].setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\Cs102\\images\\eight.png"));
-		MineSweeperGUI.getIsClicked()[r][c]=true;
+	
 	}
 	
 	
 }
 else if (grid.getCellContent(r, c)==0){
-	 MineSweeperGUI.getIsClicked()[r][c]=true;
+	// MineSweeperGUI.getIsClicked()[r][c]=true;
 	btns[r][c].setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\Cs102\\images\\blank.png"));
 	check(r-1,c);
 	check(r+1,c);
