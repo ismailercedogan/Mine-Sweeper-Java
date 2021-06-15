@@ -1,7 +1,8 @@
 package project02;
 import javax.swing.*;
 
-import java.awt.*;
+
+
 import java.awt.event.*;
 public class MyMouseAdapter extends MouseAdapter {
 	private int row,col;
@@ -16,10 +17,10 @@ this.grid=g;
 }
 	
 	public void mouseClicked(MouseEvent e) {
-	
-		if(SwingUtilities.isRightMouseButton(e)) {
 		if(e.getSource() instanceof JButton) {
-  		  JButton button= (JButton) e.getSource();
+	  		  JButton button= (JButton) e.getSource();
+		if(SwingUtilities.isRightMouseButton(e)) {
+		
   		 if(!MineSweeperGUI.getIsFlagged()[row][col]&&!MineSweeperGUI.getIsClicked()[row][col]) {
   		  
 		 button.setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\Cs102\\images\\flagged.png"));
@@ -36,7 +37,7 @@ this.grid=g;
 			}
 		}
 		  if (number==1) {
-			JOptionPane.showMessageDialog(null," YOU WON!!!");
+			JOptionPane.showMessageDialog(null,"You’re a genius");
 			  System.exit(0);
 	   
 		  }
@@ -51,7 +52,14 @@ this.grid=g;
   		 
 		}
 		
-		}}
+		
+		
+		}
+		}
+	
+	
+	
+	
 
 	public static int getCount() {
 		return count;
