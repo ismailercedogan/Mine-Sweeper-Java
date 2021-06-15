@@ -42,7 +42,7 @@ public class MineSweeper {
         };
         timer.schedule(task, 0, 1000);
 		
-		Icon icon = new ImageIcon("C:\\Users\\user\\Desktop\\Cs102\\images\\adsýz.png");
+		Icon icon = new ImageIcon("adsýz.png");
 	    JFrame frame=new JFrame("Mine Sweeper | # of mines:"+ NUM_MINES);
 	   MineSweeperGUI sweepergui= new MineSweeperGUI(Sýze,Sýze,NUM_MINES);
 	    frame.setLayout(new BorderLayout());
