@@ -52,7 +52,7 @@ this.btns=b;
   		 
 		}
 		else if(e.getButton()==1) {
-			System.out.println("sol");
+			
 			if(grid.getCellContent(row, col)!=-1) {
 			check(button.getRow(),button.getCol());	
 			}

@@ -5,15 +5,13 @@ import javax.swing.JButton;
 public class Btn extends JButton {
 	
 	private static final long serialVersionUID = 1L;
-	private int row,col,count;
-	private boolean mine,flag;
+	private int row,col;
+	
 	
 	public Btn(int row, int col) {
 		this.row = row;
 		this.col = col;
-		this.count = 0;
-		this.mine = false;
-		this.flag = false;
+	
 	}
 
 	public int getRow() {
@@ -32,27 +30,4 @@ public class Btn extends JButton {
 		this.col = col;
 	}
 
-	public int getCount() {
-		return count;
-	}
-
-	public void setCount(int count) {
-		this.count = count;
-	}
-
-	public boolean isMine() {
-		return mine;
-	}
-
-	public void setMine(boolean mine) {
-		this.mine = mine;
-	}
-
-	public boolean isFlag() {
-		return flag;
-	}
-
-	public void setFlag(boolean flag) {
-		this.flag = flag;
-	}
 }
